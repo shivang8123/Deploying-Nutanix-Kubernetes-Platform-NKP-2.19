@@ -1,0 +1,205 @@
+root@bastion-VM-1:~/scripts# kubectl get po -A
+NAMESPACE                           NAME                                                              READY   STATUS      RESTARTS        AGE
+caaph-system                        caaph-controller-manager-7bb9597587-qc4bn                         1/1     Running     0               3d1h
+capa-system                         capa-controller-manager-5957864d54-xncwp                          1/1     Running     1 (3d8h ago)    7d2h
+capg-system                         capg-controller-manager-5d9c4bb898-sfmqf                          1/1     Running     1 (3d8h ago)    6d20h
+capi-kubeadm-bootstrap-system       capi-kubeadm-bootstrap-controller-manager-7dcc8b7f88-w5zfq        1/1     Running     1 (3d8h ago)    7d1h
+capi-kubeadm-control-plane-system   capi-kubeadm-control-plane-controller-manager-7cc778f7d-ptgvq     1/1     Running     0               7d1h
+capi-operator-system                cluster-api-operator-6b788449b9-sz62v                             1/1     Running     1 (3d8h ago)    7d1h
+capi-stack-operator                 cluster-api-stack-operator-7fc88d49bc-4v792                       1/1     Running     0               3d1h
+capi-stack-operator                 cluster-api-stack-operator-self-hosted-bundle-68f6fb4bfc-5cbhs    1/1     Running     0               3d1h
+capi-system                         capi-controller-manager-64478794bc-lt5z5                          1/1     Running     1 (3d8h ago)    6d23h
+cappp-system                        cappp-controller-manager-5597c74d5-52zrb                          1/1     Running     0               3d1h
+capv-system                         capv-controller-manager-5c489b7886-xkxnk                          1/1     Running     0               6d20h
+capx-system                         capx-controller-manager-65968b9677-bsshk                          1/1     Running     1 (3d8h ago)    6d20h
+capz-system                         azureserviceoperator-controller-manager-6f99fcc6fc-cz2t7          1/1     Running     0               3d1h
+capz-system                         azureserviceoperator-controller-manager-6f99fcc6fc-v2z64          1/1     Running     0               3d1h
+capz-system                         capz-controller-manager-56f8894d5b-vv5nb                          1/1     Running     1 (3d8h ago)    7d1h
+caren-system                        cluster-api-runtime-extensions-nutanix-544c7bf5cd-hdxmx           1/1     Running     0               6d20h
+caren-system                        helm-repository-98fdfb7b7-8s9tj                                   1/1     Running     0               3d1h
+cert-manager                        cert-manager-5b44c9dc6d-lmtff                                     1/1     Running     0               3d1h
+cert-manager                        cert-manager-cainjector-5f7cff7996-fffqv                          1/1     Running     0               3d1h
+cert-manager                        cert-manager-webhook-5c48bf99d7-fwqq4                             1/1     Running     0               3d1h
+container-object-storage-system     container-object-storage-controller-c49685b46-bsbnz               1/1     Running     0               7d7h
+external-secrets                    external-secrets-64578d47c4-bw6g6                                 1/1     Running     0               3d1h
+external-secrets                    external-secrets-webhook-fbb9cf4f4-jwc82                          1/1     Running     0               3d1h
+git-operator-system                 git-operator-admin-credentials-rotate-29884320-ttpc8              0/1     Completed   0               2d13h
+git-operator-system                 git-operator-admin-credentials-rotate-29885760-bd976              0/1     Completed   0               37h
+git-operator-system                 git-operator-admin-credentials-rotate-29887200-7wjjk              0/1     Completed   0               13h
+git-operator-system                 git-operator-controller-manager-5b847b4b96-jq5rk                  2/2     Running     16 (13h ago)    3d2h
+git-operator-system                 git-operator-git-0                                                4/4     Running     0               3d1h
+kommander-default-workspace         karma-traefik-certs-kommander-default-workspace-cert-federrxpqn   1/1     Running     0               3d1h
+kommander-default-workspace         prometheus-traefik-certs-kommander-default-workspace-cert-2wvwt   1/1     Running     0               3d1h
+kommander-flux                      flux-oci-mirror-5d98f758cb-dtzqk                                  1/1     Running     0               3d1h
+kommander-flux                      helm-controller-7d744ddb7b-fm9bh                                  1/1     Running     0               3d1h
+kommander-flux                      image-automation-controller-544fcdf69b-t6rp9                      1/1     Running     0               3d1h
+kommander-flux                      image-reflector-controller-66b65d5c-8qmtr                         1/1     Running     0               3d1h
+kommander-flux                      kustomize-controller-66c6857568-ql5w9                             1/1     Running     13 (3d1h ago)   3d2h
+kommander-flux                      notification-controller-5d85c4f8df-td2wt                          1/1     Running     32 (3d1h ago)   3d7h
+kommander-flux                      source-controller-6cdfd5bd79-hc2gw                                1/1     Running     32 (3d1h ago)   3d7h
+kommander                           alertmanager-kube-prometheus-stack-alertmanager-0                 2/2     Running     0               3d1h
+kommander                           centralized-grafana-5fbd84c6ff-gql76                              3/3     Running     0               3d2h
+kommander                           centralized-opencost-77c4dd67b8-8lfn7                             1/1     Running     15 (3d1h ago)   3d2h
+kommander                           cluster-autoscaler-01a16243-d7f6-7bed-b1fb-d0d29c5d94ce-6498jbb   1/1     Running     0               7d7h
+kommander                           cluster-observer-1404160643-6f5d585474-rk6fg                      1/1     Running     0               6d20h
+kommander                           dex-6595796dbb-hnbtk                                              1/1     Running     0               3d7h
+kommander                           dex-dex-controller-6558f64d48-llnlp                               2/2     Running     0               3d7h
+kommander                           dex-k8s-authenticator-8645f4f8d7-f95r6                            1/1     Running     1 (3d2h ago)    3d2h
+kommander                           etcd-metrics-proxy-g78xf                                          1/1     Running     0               7d1h
+kommander                           etcd-metrics-proxy-p8qw7                                          1/1     Running     0               7d1h
+kommander                           etcd-metrics-proxy-zszs8                                          1/1     Running     0               7d1h
+kommander                           gatekeeper-audit-5978dfb446-q4pb5                                 1/1     Running     0               3d1h
+kommander                           gatekeeper-controller-manager-674864dd8d-78d6f                    1/1     Running     11 (3d1h ago)   3d2h
+kommander                           gatekeeper-controller-manager-674864dd8d-79477                    1/1     Running     13 (3d1h ago)   6d20h
+kommander                           grafana-logging-64d596d4c9-qvxd6                                  2/2     Running     0               6d20h
+kommander                           grafana-loki-v3-compactor-0                                       1/1     Running     0               2d23h
+kommander                           grafana-loki-v3-distributor-f87b99859-q5ng8                       1/1     Running     0               2d23h
+kommander                           grafana-loki-v3-gateway-78ccf96997-nnqkp                          1/1     Running     0               2d23h
+kommander                           grafana-loki-v3-index-gateway-0                                   1/1     Running     0               2d23h
+kommander                           grafana-loki-v3-ingester-zone-a-0                                 1/1     Running     0               2d23h
+kommander                           grafana-loki-v3-ingester-zone-b-0                                 1/1     Running     0               2d23h
+kommander                           grafana-loki-v3-ingester-zone-c-0                                 1/1     Running     0               2d23h
+kommander                           grafana-loki-v3-post-install-llt4b                                0/1     Completed   0               2d23h
+kommander                           grafana-loki-v3-pre-install-w7gth                                 0/1     Completed   0               2d23h
+kommander                           grafana-loki-v3-querier-bf684dcb8-z6z4t                           1/1     Running     0               2d23h
+kommander                           grafana-loki-v3-query-frontend-6b8bd6fffd-2tdr4                   1/1     Running     0               2d23h
+kommander                           grafana-loki-v3-query-scheduler-5786f8874d-gl42j                  1/1     Running     0               2d23h
+kommander                           karma-7d9c89f9bf-cr48j                                            1/1     Running     0               3d1h
+kommander                           karma-traefik-certs-kommander-cert-federation-67bc7ff7c8-87msv    1/1     Running     0               3d1h
+kommander                           kommander-appmanagement-758db546fb-5bldq                          2/2     Running     0               3d1h
+kommander                           kommander-appmanagement-webhook-6b5487bfd7-drdz6                  1/1     Running     32 (3d1h ago)   3d7h
+kommander                           kommander-authorizedlister-7c56b87bcd-pfslj                       1/1     Running     0               3d7h
+kommander                           kommander-capimate-7b4ccd7f47-6xvdf                               1/1     Running     1 (3d2h ago)    6d20h
+kommander                           kommander-capimate-7b4ccd7f47-x649c                               1/1     Running     0               3d1h
+kommander                           kommander-cloudnative-pg-6944c76d54-lcgk8                         1/1     Running     32 (3d1h ago)   5d16h
+kommander                           kommander-cm-d97554f56-wl4gs                                      2/2     Running     0               3d1h
+kommander                           kommander-fluent-bit-4p9kx                                        1/1     Running     0               3d1h
+kommander                           kommander-fluent-bit-4qhtj                                        1/1     Running     0               3d1h
+kommander                           kommander-fluent-bit-hmjd4                                        1/1     Running     0               3d1h
+kommander                           kommander-fluent-bit-np995                                        1/1     Running     0               3d1h
+kommander                           kommander-fluent-bit-ptjww                                        1/1     Running     0               3d1h
+kommander                           kommander-fluent-bit-q5fcj                                        1/1     Running     0               3d1h
+kommander                           kommander-flux-operator-5dd8ff8b46-wcw6z                          2/2     Running     0               3d1h
+kommander                           kommander-kommander-ui-56889bd5db-2c97t                           1/1     Running     0               3d7h
+kommander                           kommander-licensing-cm-6fb59bfdf6-pbnsd                           2/2     Running     1 (3d8h ago)    6d20h
+kommander                           kommander-licensing-webhook-5477f5bddf-kmw57                      1/1     Running     0               7d2h
+kommander                           kommander-operator-86c5c7c8c9-rrzxh                               1/1     Running     0               3d7h
+kommander                           kommander-operator-webhook-58f859b484-9dllq                       1/1     Running     26 (3d1h ago)   6d20h
+kommander                           kommander-reloader-reloader-748b5cf9db-t5x4l                      1/1     Running     0               3d2h
+kommander                           kommander-traefik-798c7bbdc6-79gqh                                1/1     Running     48 (3d1h ago)   3d7h
+kommander                           kommander-traefik-798c7bbdc6-hgj8w                                1/1     Running     0               3d1h
+kommander                           kommander-webhook-56ddcc8459-h4kp7                                1/1     Running     0               6d23h
+kommander                           kube-oidc-proxy-5f79d5f44f-hsmwb                                  1/1     Running     0               3d1h
+kommander                           kube-prometheus-stack-grafana-d98787bdf-94bwk                     3/3     Running     0               3d2h
+kommander                           kube-prometheus-stack-kube-state-metrics-7c96bd8f85-vnngn         1/1     Running     0               3d1h
+kommander                           kube-prometheus-stack-operator-74944c8686-xcp2r                   1/1     Running     0               3d1h
+kommander                           kube-prometheus-stack-prometheus-node-exporter-7bwrs              2/2     Running     0               7d1h
+kommander                           kube-prometheus-stack-prometheus-node-exporter-pzn72              2/2     Running     0               7d1h
+kommander                           kube-prometheus-stack-prometheus-node-exporter-scgjl              2/2     Running     8 (3d1h ago)    3d7h
+kommander                           kube-prometheus-stack-prometheus-node-exporter-sg6c5              2/2     Running     0               7d1h
+kommander                           kube-prometheus-stack-prometheus-node-exporter-tlsws              2/2     Running     0               3d2h
+kommander                           kube-prometheus-stack-prometheus-node-exporter-x9vbt              2/2     Running     12 (3d1h ago)   6d20h
+kommander                           kubernetes-dashboard-api-7c858df9fc-nvgfk                         1/1     Running     0               3d2h
+kommander                           kubernetes-dashboard-auth-cd69cbc76-rt8ww                         1/1     Running     0               3d1h
+kommander                           kubernetes-dashboard-kong-5994955dbb-8bmt8                        1/1     Running     0               3d1h
+kommander                           kubernetes-dashboard-metrics-scraper-577b556c79-wvprq             1/1     Running     0               3d1h
+kommander                           kubernetes-dashboard-web-6b5ccb4f7-6h5gf                          1/1     Running     0               3d1h
+kommander                           kubetunnel-b7686666-fn2ll                                         1/1     Running     0               3d7h
+kommander                           kubetunnel-webhook-79b644d777-xdlbd                               1/1     Running     26 (3d1h ago)   6d20h
+kommander                           logging-operator-6bc884c479-5bm2k                                 1/1     Running     26 (3d1h ago)   5d16h
+kommander                           logging-operator-logging-fluentbit-2mn2j                          1/1     Running     0               5d16h
+kommander                           logging-operator-logging-fluentbit-d7wbm                          1/1     Running     0               3d7h
+kommander                           logging-operator-logging-fluentbit-fkvlz                          1/1     Running     0               5d16h
+kommander                           logging-operator-logging-fluentbit-l79z2                          1/1     Running     0               3d2h
+kommander                           logging-operator-logging-fluentbit-lm58c                          1/1     Running     0               5d16h
+kommander                           logging-operator-logging-fluentbit-sbz4r                          1/1     Running     0               5d16h
+kommander                           logging-operator-logging-fluentd-0                                3/3     Running     1 (3d2h ago)    5d16h
+kommander                           logging-operator-logging-fluentd-configch-36d458f5                0/1     Completed   0               5d16h
+kommander                           loggingstack-controller-manager-7c97dc848-ttptm                   1/1     Running     30 (3d1h ago)   3d7h
+kommander                           nkp-cluster-controller-manager-5c78cc5c59-hzr7n                   1/1     Running     29 (3d1h ago)   3d7h
+kommander                           nkp-cluster-webhook-5bd447c59c-q4ltt                              1/1     Running     0               3d1h
+kommander                           nkp-insights-management-auth-server-7b454dc479-7w8mc              1/1     Running     0               3d7h
+kommander                           nkp-insights-management-mgmt-cm-596bb5b74b-rcwq7                  1/1     Running     0               6d20h
+kommander                           nkp-management-plane-controller-manager-57cd5c6bff-79krb          1/1     Running     0               3d7h
+kommander                           nkp-management-plane-webhook-78569b7cf5-mgpph                     1/1     Running     29 (3d1h ago)   3d7h
+kommander                           prometheus-adapter-9cb8c6fc8-fttvc                                1/1     Running     0               3d2h
+kommander                           prometheus-kube-prometheus-stack-prometheus-0                     3/3     Running     0               3d1h
+kommander                           prometheus-traefik-certs-kommander-cert-federation-575864bmwgcr   1/1     Running     0               3d1h
+kommander                           runtime-extension-kommander-57c477cb68-9zl45                      1/1     Running     0               6d23h
+kommander                           thanos-query-676dd56fb9-f6pqd                                     1/1     Running     0               6d20h
+kommander                           traefik-forward-auth-mgmt-df749655b-2gvrv                         1/1     Running     0               3d7h
+kommander                           velero-backup-storage-location-updater-6f4b4d8fd6-4h57d           1/1     Running     0               3d7h
+kommander                           velero-c978c58c7-zzx5s                                            1/1     Running     0               5d23h
+kube-federation-system              kubefed-admission-webhook-6cbb566668-jbhsk                        1/1     Running     0               3d7h
+kube-federation-system              kubefed-controller-manager-7c57dfd76b-dn8gh                       1/1     Running     5 (3d1h ago)    3d7h
+kube-federation-system              kubefed-controller-manager-7c57dfd76b-nz4cw                       1/1     Running     4 (3d2h ago)    3d7h
+kube-system                         cilium-75wdl                                                      1/1     Running     0               7d7h
+kube-system                         cilium-bj4nk                                                      1/1     Running     0               7d7h
+kube-system                         cilium-c64ts                                                      1/1     Running     0               7d7h
+kube-system                         cilium-envoy-6x7j2                                                1/1     Running     0               7d7h
+kube-system                         cilium-envoy-79rj4                                                1/1     Running     0               7d7h
+kube-system                         cilium-envoy-kh6w7                                                1/1     Running     0               3d2h
+kube-system                         cilium-envoy-mbpkj                                                1/1     Running     0               6d20h
+kube-system                         cilium-envoy-srtlr                                                1/1     Running     0               7d7h
+kube-system                         cilium-envoy-wwx4x                                                1/1     Running     0               3d7h
+kube-system                         cilium-n8skm                                                      1/1     Running     0               3d2h
+kube-system                         cilium-nmmwk                                                      1/1     Running     0               6d20h
+kube-system                         cilium-operator-8567d5879d-9926l                                  1/1     Running     0               7d7h
+kube-system                         cilium-operator-8567d5879d-k9kvg                                  1/1     Running     0               6d23h
+kube-system                         cilium-wfchb                                                      1/1     Running     0               3d7h
+kube-system                         coredns-7d764666f9-bmclm                                          1/1     Running     0               7d7h
+kube-system                         coredns-7d764666f9-pj5t5                                          1/1     Running     0               7d7h
+kube-system                         etcd-nkp-mgmt-shiv-5qq96-bgc89                                    1/1     Running     0               7d7h
+kube-system                         etcd-nkp-mgmt-shiv-5qq96-q6gcw                                    1/1     Running     0               7d7h
+kube-system                         etcd-nkp-mgmt-shiv-5qq96-rwfzf                                    1/1     Running     0               7d7h
+kube-system                         hubble-relay-677466df54-gjmmh                                     1/1     Running     0               3d7h
+kube-system                         kube-apiserver-nkp-mgmt-shiv-5qq96-bgc89                          1/1     Running     0               7d7h
+kube-system                         kube-apiserver-nkp-mgmt-shiv-5qq96-q6gcw                          1/1     Running     0               7d7h
+kube-system                         kube-apiserver-nkp-mgmt-shiv-5qq96-rwfzf                          1/1     Running     0               7d7h
+kube-system                         kube-controller-manager-nkp-mgmt-shiv-5qq96-bgc89                 1/1     Running     0               7d7h
+kube-system                         kube-controller-manager-nkp-mgmt-shiv-5qq96-q6gcw                 1/1     Running     0               7d7h
+kube-system                         kube-controller-manager-nkp-mgmt-shiv-5qq96-rwfzf                 1/1     Running     0               7d7h
+kube-system                         kube-scheduler-nkp-mgmt-shiv-5qq96-bgc89                          1/1     Running     1 (3d8h ago)    7d7h
+kube-system                         kube-scheduler-nkp-mgmt-shiv-5qq96-q6gcw                          1/1     Running     0               7d7h
+kube-system                         kube-scheduler-nkp-mgmt-shiv-5qq96-rwfzf                          1/1     Running     0               7d7h
+kube-system                         kube-vip-nkp-mgmt-shiv-5qq96-bgc89                                1/1     Running     0               7d7h
+kube-system                         kube-vip-nkp-mgmt-shiv-5qq96-q6gcw                                1/1     Running     0               7d7h
+kube-system                         kube-vip-nkp-mgmt-shiv-5qq96-rwfzf                                1/1     Running     0               7d7h
+kube-system                         multus-d42qr                                                      1/1     Running     0               7d7h
+kube-system                         multus-gw7w2                                                      1/1     Running     0               7d7h
+kube-system                         multus-hqdrf                                                      1/1     Running     0               7d7h
+kube-system                         multus-lb9k9                                                      1/1     Running     0               6d20h
+kube-system                         multus-mw2vh                                                      1/1     Running     0               3d7h
+kube-system                         multus-nd4k2                                                      1/1     Running     0               3d2h
+kube-system                         nutanix-cloud-controller-manager-748645f65b-xfgsc                 1/1     Running     0               7d7h
+kube-system                         snapshot-controller-65499d85c5-9697m                              1/1     Running     0               7d7h
+metallb-system                      metallb-controller-7b65dc86f5-qtswt                               1/1     Running     0               7d7h
+metallb-system                      metallb-speaker-2jtxg                                             4/4     Running     0               3d1h
+metallb-system                      metallb-speaker-6hd6w                                             4/4     Running     1 (3d2h ago)    3d2h
+metallb-system                      metallb-speaker-plh66                                             4/4     Running     1 (7d7h ago)    7d7h
+metallb-system                      metallb-speaker-pt5b4                                             4/4     Running     1 (7d7h ago)    7d7h
+metallb-system                      metallb-speaker-sqlkg                                             4/4     Running     0               7d7h
+metallb-system                      metallb-speaker-xcnfw                                             4/4     Running     70 (3d1h ago)   6d20h
+node-feature-discovery              node-feature-discovery-gc-7c74964987-mm28j                        1/1     Running     0               7d7h
+node-feature-discovery              node-feature-discovery-master-86f47f4b45-bpbv4                    1/1     Running     0               7d7h
+node-feature-discovery              node-feature-discovery-worker-69x5t                               1/1     Running     0               7d7h
+node-feature-discovery              node-feature-discovery-worker-6d6jb                               1/1     Running     0               7d7h
+node-feature-discovery              node-feature-discovery-worker-f7xv9                               1/1     Running     0               7d7h
+node-feature-discovery              node-feature-discovery-worker-kpqbp                               1/1     Running     7 (3d1h ago)    3d2h
+node-feature-discovery              node-feature-discovery-worker-sks69                               1/1     Running     0               3d1h
+node-feature-discovery              node-feature-discovery-worker-xvsqp                               0/1     Pending     0               3d
+ntnx-system                         konnector-agent-8566645944-ztv9j                                  1/1     Running     0               3d1h
+ntnx-system                         nutanix-csi-controller-646b5d54b5-cm2vk                           7/7     Running     0               6d20h
+ntnx-system                         nutanix-csi-controller-646b5d54b5-z46fc                           7/7     Running     0               6d23h
+ntnx-system                         nutanix-csi-node-5lq4z                                            3/3     Running     0               3d1h
+ntnx-system                         nutanix-csi-node-fsqhg                                            3/3     Running     0               7d7h
+ntnx-system                         nutanix-csi-node-g7js4                                            3/3     Running     2 (7d7h ago)    7d7h
+ntnx-system                         nutanix-csi-node-qxb65                                            3/3     Running     39 (3d1h ago)   6d20h
+ntnx-system                         nutanix-csi-node-r6kp6                                            3/3     Running     2 (3d2h ago)    3d2h
+ntnx-system                         nutanix-csi-node-znzj7                                            3/3     Running     2 (7d7h ago)    7d7h
+registry-system                     cncf-distribution-registry-docker-registry-0                      2/2     Running     0               7d7h
+registry-system                     cncf-distribution-registry-docker-registry-1                      2/2     Running     0               7d7h
+workload                            cluster-autoscaler-01a16494-f212-7c76-b24a-cfe831f8eabf-95vkdjm   1/1     Running     1 (6d20h ago)   6d20h
+workload                            cluster-observer-1349464178-89d54b8d6-pslm7                       1/1     Running     0               6d20h
+workload                            karma-traefik-certs-workload-cert-federation-56d5676568-6rx7j     1/1     Running     0               3d7h
+workload                            prometheus-traefik-certs-workload-cert-federation-85f9f8cc79wtr   1/1     Running     0               3d7h
