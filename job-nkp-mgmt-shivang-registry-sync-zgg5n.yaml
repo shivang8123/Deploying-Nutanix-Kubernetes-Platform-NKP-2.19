@@ -1,0 +1,125 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: nkp-mgmt-shivang-registry-sync-
+  labels:
+    bootstrap.nkp.nutanix.com/push-bundles-job: "true"
+    konvoy.d2iq.io/cluster-name: nkp-mgmt-shivang
+  name: nkp-mgmt-shivang-registry-sync-zgg5n
+  namespace: kommander
+spec:
+  backoffLimit: 10
+  completionMode: NonIndexed
+  completions: 1
+  manualSelector: false
+  parallelism: 1
+  podReplacementPolicy: TerminatingOrFailed
+  selector:
+    matchLabels:
+      batch.kubernetes.io/controller-uid: 0f609758-34e2-4fd9-a66f-6b0a99b6ece0
+  suspend: false
+  template:
+    metadata:
+      labels:
+        batch.kubernetes.io/controller-uid: 0f609758-34e2-4fd9-a66f-6b0a99b6ece0
+        batch.kubernetes.io/job-name: nkp-mgmt-shivang-registry-sync-zgg5n
+        controller-uid: 0f609758-34e2-4fd9-a66f-6b0a99b6ece0
+        job-name: nkp-mgmt-shivang-registry-sync-zgg5n
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: node-role.kubernetes.io/control-plane
+                operator: Exists
+      containers:
+      - args:
+        - push
+        - bundle
+        - --bundle
+        - /opt/bundles/*.tar
+        - --to-registry
+        - https://127.0.0.1:5000
+        - --to-registry-ca-cert-file
+        - /opt/certs/ca.crt
+        image: ghcr.io/mesosphere/mindthegap:v1.25.1
+        imagePullPolicy: IfNotPresent
+        name: registry-sync
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /opt/bundles
+          name: airgap-bundle-directory
+          readOnly: true
+        - mountPath: /opt/certs
+          name: registry-certs
+          readOnly: true
+      dnsPolicy: ClusterFirst
+      initContainers:
+      - args:
+        - --for=condition=Ready
+        - --timeout=-1s
+        - --interval=5s
+        - --namespace
+        - registry-system
+        - --kubeconfig=/kubeconfig/admin.conf
+        - pod/cncf-distribution-registry-docker-registry-0
+        image: ghcr.io/nutanix-cloud-native/kubectl-betterwait:v1.36.2
+        imagePullPolicy: IfNotPresent
+        name: wait-for-registry
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /kubeconfig
+          name: kubeconfig
+          readOnly: true
+      - args:
+        - port-forward
+        - --namespace
+        - registry-system
+        - --address=127.0.0.1
+        - --kubeconfig=/kubeconfig/admin.conf
+        - pod/cncf-distribution-registry-docker-registry-0
+        - 5000:5000
+        command:
+        - /bin/kubectl
+        image: ghcr.io/nutanix-cloud-native/kubectl-betterwait:v1.36.2
+        imagePullPolicy: IfNotPresent
+        name: port-forward-registry
+        resources: {}
+        restartPolicy: Always
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /kubeconfig
+          name: kubeconfig
+          readOnly: true
+      restartPolicy: OnFailure
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      tolerations:
+      - operator: Exists
+      volumes:
+      - name: kubeconfig
+        secret:
+          defaultMode: 420
+          items:
+          - key: value
+            path: admin.conf
+          secretName: nkp-mgmt-shivang-kubeconfig
+      - name: registry-certs
+        secret:
+          defaultMode: 420
+          items:
+          - key: ca.crt
+            path: ca.crt
+          secretName: nkp-mgmt-shivang-registry-addon-ca
+      - hostPath:
+          path: /opt/bundles
+          type: Directory
+        name: airgap-bundle-directory
+status: {}
